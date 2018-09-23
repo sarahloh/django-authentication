@@ -19,6 +19,7 @@
         </ul>
     </nav>
     <hr>
+
     {% if messages %}
     <div>
         {% for m in messages %}
@@ -28,9 +29,10 @@
     {% endif %}
 
     <form method="POST">
+        {% csrf_token %}
         {{ login_form }}
+        <button type="submit">Login</button>
     </form>
-
 </body>
 
 </html>
